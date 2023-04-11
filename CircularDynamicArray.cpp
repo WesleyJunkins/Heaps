@@ -88,6 +88,26 @@ public:
         };
     };
 
+    const T &operator[](int i) const
+    {
+        if ((i < 0) || (i > aSize - 1))
+        {
+            cout << "ERROR: [" << i << "] is out of bounds for this array. Enter a value between 0 and " << aSize - 1 << ".\n";
+            return returnReferenceValue;
+        }
+        else
+        {
+            if (isReversed == false)
+            {
+                return array[actualPosition(frontIndex + i)];
+            }
+            else
+            {
+                return array[actualPosition(frontIndex - i)];
+            }
+        };
+    };
+
     void addEnd(T v)
     {
         if (aSize == aCapacity)
@@ -209,6 +229,11 @@ public:
     };
 
     int length()
+    {
+        return aSize;
+    };
+
+    int length() const
     {
         return aSize;
     };
@@ -414,7 +439,7 @@ public:
 
         delete[] leftSubArray;
         delete[] rightSubArray;
-    }
+    };
 
     void mergeSort(T tempArray[], int const lowIndex, int const highIndex)
     {
@@ -427,7 +452,7 @@ public:
         mergeSort(tempArray, lowIndex, middleIndex);
         mergeSort(tempArray, middleIndex + 1, highIndex);
         mergeBack(tempArray, lowIndex, middleIndex, highIndex);
-    }
+    };
 
     int linearSearch(T e)
     {
@@ -640,7 +665,17 @@ private:
         }
         int actualPosition = beforeMod % aCapacity;
         return actualPosition;
-    }
+    };
+
+    int actualPosition(int beforeMod) const
+    {
+        if (beforeMod < 0)
+        {
+            beforeMod = beforeMod + aCapacity;
+        }
+        int actualPosition = beforeMod % aCapacity;
+        return actualPosition;
+    };
 };
 
 #endif
