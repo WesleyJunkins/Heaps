@@ -428,7 +428,7 @@ int main()
     // cout << "Done" << endl;
     // T2.printKey();
 
-    // T1.merge(T2);
+    T1.merge(T2);
 
     // cout << "DONE" << endl;
     // T1.printKey();
@@ -453,12 +453,12 @@ int main()
     //     // T1.printKey();
     //     // cout<<endl;
     // }
-    for(int i = 0; i < 1000; i++)
-    {
-        cout<<T2.extractMin()<<endl;
-        // T1.printKey();
-        // cout<<endl;
-    }
+    // for(int i = 0; i < 1000; i++)
+    // {
+    //     cout<<T2.extractMin()<<endl;
+    //     // T1.printKey();
+    //     // cout<<endl;
+    // }
 
     // T1.insert(1);
     // T1.insert(2);
@@ -470,6 +470,8 @@ int main()
 
     cout << "Done" << endl;
     T2.printKey();
+    cout<<"Done again. There should be output below this line."<<endl;
+    T1.printKey();
 
     // cout << endl;
     //  cout<<T1.peekKey()<<endl;
