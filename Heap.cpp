@@ -12,8 +12,7 @@ public:
     CircularDynamicArray<keytype> mainArray;
 
     // Default Constructor
-    Heap()
-    {
+    Heap(){
 
     };
 
@@ -32,15 +31,15 @@ public:
     };
 
     // Copy Constructor
-    Heap(const Heap& other)
+    Heap(const Heap &other)
     {
         mainArray = CircularDynamicArray<keytype>(other.mainArray);
     };
 
     // Copy Assignment Operator
-    Heap& operator= (const Heap& other)
+    Heap &operator=(const Heap &other)
     {
-        if(this != &other)
+        if (this != &other)
         {
             mainArray = CircularDynamicArray<keytype>(other.mainArray);
         }
@@ -135,30 +134,5 @@ public:
         }
     };
 };
-
-int main()
-{
-    Heap<int> T1;
-    T1.insert(3);
-    // T1.insert(4);
-    // T1.insert(5);
-    // T1.insert(6);
-    // T1.insert(7);
-    // T1.insert(8);
-    // T1.insert(9);
-    // T1.insert(10);
-    // T1.insert(11);
-    T1.insert(2);
-    T1.printKey();
-    cout<<T1.peekKey()<<endl;
-    T1.printKey();
-    cout<<T1.extractMin()<<endl;
-    T1.printKey();
-    cout<<T1.extractMin()<<endl;
-    T1.printKey();
-    cout<<T1.extractMin()<<endl;
-    T1.printKey();
-    return 0;
-}
 
 #endif
