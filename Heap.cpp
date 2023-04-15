@@ -1,5 +1,5 @@
-#ifndef heap
-#define heap
+#ifndef WesHeap
+#define WesHeap
 
 #include <iostream>
 #include "CircularDynamicArray.cpp"
