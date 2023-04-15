@@ -438,6 +438,7 @@ void randomBullshitBHeap()
             default:
                 break;
         }
+        std::cout<<"Printing Original Heap"<<std::endl;
         heap->printKey();
     }
 }

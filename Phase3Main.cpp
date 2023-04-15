@@ -28,7 +28,7 @@ int main(){
 	//Should output 2 3 5 4 8 9 6 10 7
 	
 	
-	BHeap<string> X(A,10), Y;
+	BHeap<string> X(A,10), Y, Z;
 
 	X.printKey();
 	//Should output 
@@ -48,6 +48,18 @@ int main(){
 	//
 	//B3
 	//C E H I F J K D
+
+	cout<<"Here is COPY= --------------------"<<endl;
+	Z.insert("Z");
+	Z = X;
+	Z.printKey();
+	cout<<"End COPY= --------------------"<<endl;
+
+	cout<<"Here is COPY= --------------------"<<endl;
+	Z.insert("Z");
+	BHeap<string> W(X);
+	W.printKey();
+	cout<<"End COPY= --------------------"<<endl;
 	
 	Y.insert("M"); 
 	Y.insert("O");
