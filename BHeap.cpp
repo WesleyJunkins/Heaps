@@ -92,6 +92,11 @@ public:
     // Show minimum. Then remove it.
     keytype extractMin()
     {
+        if(rootList.length() == 0)
+        {
+            keytype errorKeytype;
+            return errorKeytype;
+        }
         keytype deletedElementKey = minElement->key;
         int positionOfMinElement;
         if (rootList.length() != 0)
@@ -114,7 +119,8 @@ public:
             // For each element in minElement's childList, add it to the front of rootList.
             rootList.addFront(minElement->childList[i]);
             // Traverse the rootList, with the newly added element, until you get to an element with an equal or greater order. Leave the element before this element. This will automatically stop once there is no next element to compare the previous element to (i.e. index + 1 = 0)
-            for (int index = 0; (index + 1) < rootList.length();)
+            int index;
+            for (index = 0; (index + 1) < rootList.length();)
             {
                 if (rootList[index]->order() > rootList[index + 1]->order())
                 {
@@ -129,9 +135,10 @@ public:
                 }
                 index++;
             }
+            extractMinFixup(index); //DELETE THIS LINE TO CALL EXTRACTMINFIXUP() ONLY ONCE AFTER ADDING ALL THE MERGED NODES.
         }
         //  Consolidate
-        extractMinFixup(0);
+        //extractMinFixup(0); //UN-COMMENT THIS LINE TO CALL EXTRACTMINFIXUP() ONLY ONCE AFTER ADDING ALL THE MERGED NODES.
         delete minElement;
         findMin();
         return deletedElementKey;
@@ -391,21 +398,23 @@ public:
     };
 };
 
-// int main()
-// {
-//     int T1KeyValues[20] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 0, 6, 8, 10, 12, 14, 16, 18, 20};
-//     int T1MoreKeyValues[10] = {1, 2, 3, 4, 5, 11, 12, 13, 14, 15};
-//     int T2MoreKeyValues[11] = {6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21};
-//     string T1StringValues[10] = {"the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "log", "tonight"};
+int main()
+{
+    int T1KeyValues[20] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 2, 0, 6, 8, 10, 12, 14, 16, 18, 20};
+    int T1MoreKeyValues[10] = {1, 2, 3, 4, 5, 11, 12, 13, 14, 15};
+    int T2MoreKeyValues[11] = {6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21};
+    string T1StringValues[10] = {"the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "log", "tonight"};
 
-//     //BHeap<int> T1;
+    BHeap<int> T1;
 
 //     BHeap<int> T1(T1KeyValues, 20);
 
-//     // for (int i = 0; i < 1000; i++)
-//     // {
-//     //     T1.insert(i);
-//     // };
+    for (int i = 0; i < 1000000; i++)
+    {
+        T1.insert(i);
+    };
+
+    T1.printKey();
 
 //     // cout<<"Printing T1 Before the stuff"<<endl;
 //     // T1.printKey();
@@ -473,17 +482,17 @@ public:
 //     cout<<"Done again. There should be output below this line."<<endl;
 //     T1.printKey();
 
-//     for(int i = 0; i < 40; i++)
-//     {
-//         cout<<T1.extractMin()<<endl;
-//     }
+    for(int i = 0; i < 1000000; i++)
+    {
+        cout<<T1.extractMin()<<endl;
+    }
 //     cout<<"Printing T1 after extracting everything. Should be empty, but should give no error."<<endl;
 //     T1.printKey();
 
 //     // cout << endl;
 //     //  cout<<T1.peekKey()<<endl;
 //     //  cout<<T1.peekKey()<<endl;
-//     return 0;
-// }
+    return 0;
+}
 
 #endif

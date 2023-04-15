@@ -78,5 +78,40 @@ int main(){
 	//B3
 	//C E H I F J K D
 			
+
+	// BHeap<int> T1;
+	// T1.insert(6);
+	// T1.insert(2);
+	// T1.insert(10);
+	// T1.insert(7);
+	// T1.insert(5);
+	// T1.insert(1);
+	// T1.insert(11);
+	// T1.insert(9);
+	// T1.insert(3);
+	// T1.insert(4);
+	// T1.insert(8);
+
+	// T1.printKey();
+
+	// cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// T1.printKey();
+
+	// cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// T1.printKey();
+
+	// cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// T1.printKey();
+
+	// 	cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 		cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 			cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 				cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 					cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 						cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 							cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 								cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 									cout<<"Extract Min: "<<T1.extractMin()<<endl;
+	// 										cout<<"Extract Min: "<<T1.extractMin()<<endl;
 	return 0;
 }
